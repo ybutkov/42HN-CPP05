@@ -4,12 +4,10 @@
 #include "AForm.hpp"
 
 class RobotomyRequestForm: public AForm {
-    static constexpr int DEFAULT_SIGN_GRADE = 72;
-    static constexpr int DEFAULT_EXECUTE_GRADE = 45;
     RobotomyRequestForm() = delete;
 public:
     RobotomyRequestForm(const std::string& target):
-        AForm("RobotomyRequestForm", target, DEFAULT_SIGN_GRADE, DEFAULT_EXECUTE_GRADE) {}
+        AForm("RobotomyRequestForm", target, 72, 45) {}
     RobotomyRequestForm(const RobotomyRequestForm& other);
     RobotomyRequestForm& operator=(const RobotomyRequestForm& other);
     ~RobotomyRequestForm() {}

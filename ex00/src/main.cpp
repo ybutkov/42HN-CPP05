@@ -21,10 +21,12 @@ void testBureaucrat(std::string name, int grade)
 
 int main()
 {
+	std::cout << "======== Creation Bureaucrafts ========" << std::endl;
 	testBureaucrat("Bob", 10);
 	testBureaucrat("John", 200);
 	testBureaucrat("Karl", -1);
 
+	std::cout << "\n======== Test 1 Bureaucrafts ========" << std::endl;
 	try {
 		Bureaucrat bob("Bob", 2);
 		std::cout << "Created: " << bob << std::endl;
@@ -37,6 +39,7 @@ int main()
 		std::cerr << ex.what() << std::endl;
 	}
 
+	std::cout << "\n======== Test 2 Bureaucrafts ========" << std::endl;
 	try {
 		Bureaucrat john("John", 149);
 		std::cout << "Created: " << john << std::endl;

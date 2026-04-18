@@ -4,12 +4,10 @@
 #include "AForm.hpp"
 
 class PresidentialPardonForm: public AForm {
-    static constexpr int DEFAULT_SIGN_GRADE = 25;
-    static constexpr int DEFAULT_EXECUTE_GRADE = 5;
     PresidentialPardonForm() = delete;
 public:
     PresidentialPardonForm(const std::string& target):
-        AForm("PresidentialPardonForm", target, DEFAULT_SIGN_GRADE, DEFAULT_EXECUTE_GRADE) {}
+        AForm("PresidentialPardonForm", target, 25, 5) {}
     PresidentialPardonForm(const PresidentialPardonForm& other);
     PresidentialPardonForm& operator=(const PresidentialPardonForm& other);
     ~PresidentialPardonForm() {}

@@ -4,7 +4,9 @@
 #include <string>
 #include <iostream>
 
-namespace GrageConfig {
+class AForm;
+
+namespace GrageConfig{
 	inline constexpr int HIGHEST_GRADE = 1;
 	inline constexpr int LOWEST_GRADE = 150;
 }
@@ -20,7 +22,7 @@ public:
 class Bureaucrat
 {
 	const std::string name;
-	unsigned int grade;
+	int grade;
 
   public:
 	Bureaucrat(): Bureaucrat("Bureaucrat_without_name", GrageConfig::LOWEST_GRADE) {}
@@ -30,9 +32,11 @@ class Bureaucrat
 	virtual ~Bureaucrat(void) {};
 
 	const std::string& getName() const;
-	unsigned int getGrade() const;
+	int getGrade() const;
 	void upGrade();
 	void downGrade();
+	void signForm(AForm& form);
+	void executeForm(AForm const & form) const;
 
 	class GradeTooHighException: public GradeException {
 	public:

@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string_view>
 
+
 Bureaucrat::Bureaucrat(std::string name, int grade): name(name)
 {
 	if (grade < GrageConfig::HIGHEST_GRADE)
@@ -12,7 +13,6 @@ Bureaucrat::Bureaucrat(std::string name, int grade): name(name)
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat& other): name(other.name), grade(other.grade) { }
-
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& other)
 {

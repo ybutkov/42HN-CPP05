@@ -4,10 +4,13 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 #include <iostream>
+#include <ctime>
+#include <cstdlib>
 
 
 int main()
 {
+	std::srand(std::time(NULL));
 	Bureaucrat lead("Mr.Zaphod", 1);
 	Bureaucrat middle("John", 75);
 	Bureaucrat junior("Genry jr.", 150);

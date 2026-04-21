@@ -33,10 +33,12 @@ void ShrubberyCreationForm::executeForm() const
 		"              |||||\n"
 		"              |||||\n";
 
-   if (!(outputFile << tree))
-   {
-		throw std::runtime_error("ShrubberyCreationForm: failed to write to file: " + fileName);
-   }
-
+	
+	try {
+	    outputFile << tree;
+    	outputFile.flush();
+	} catch (const std::ios_base::failure&) {
+    	throw std::runtime_error("ShrubberyCreationForm: failed to write/flush to file: " + fileName);
+	}
 	std::cout << "--ShrubberyCreationForm execution stopped" << std::endl;
 }

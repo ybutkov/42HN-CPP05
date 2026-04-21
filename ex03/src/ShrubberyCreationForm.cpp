@@ -17,8 +17,11 @@ void ShrubberyCreationForm::executeForm() const
 	std::cout << "--ShrubberyCreationForm execution started:" << std::endl;
 	std::string fileName = this->getTarget() + "_shrubbery";
 	std::ofstream outputFile(fileName.c_str());
-	if (!outputFile)
+	if (!outputFile.is_open())
+	{
 		throw std::runtime_error("ShrubberyCreationForm: cannot open/create output file: " + fileName);
+	}
+	
 	std::string tree =
 		"           ccee88oo\n"
 		"        C8O8O8Q8PoOb o8oo\n"
@@ -29,8 +32,11 @@ void ShrubberyCreationForm::executeForm() const
 		"             \\ ////\n"
 		"              |||||\n"
 		"              |||||\n";
-	outputFile << tree;
-	// std::cout << tree;
-	outputFile.close(); 
+
+   if (!(outputFile << tree))
+   {
+		throw std::runtime_error("ShrubberyCreationForm: failed to write to file: " + fileName);
+   }
+
 	std::cout << "--ShrubberyCreationForm execution stopped" << std::endl;
 }

@@ -17,9 +17,10 @@ void RobotomyRequestForm::executeForm() const
 {
 	std::cout << "--RobotomyRequestForm execution started:" << std::endl;
 	std::cout << "----I make some drilling noises: Bzzz-bzz" << std::endl;
-	srand(time(0));
-	std::string result = (rand() < 0.5) ? " has been robotomized successfully" : " failed";
-
-	std::cout << "----I have to inform you that " << this->getTarget() << result << std::endl;
+	
+	if (std::rand() % 2)
+		std::cout << "----I have to inform you that " << this->getTarget() << " has been robotomized successfully" << std::endl;
+	else
+		std::cout << "----I have to inform you that " << this->getTarget() << " failed" << std::endl;
 	std::cout << "--RobotomyRequestForm execution stopped" << std::endl;
 }

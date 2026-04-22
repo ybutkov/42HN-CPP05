@@ -56,5 +56,17 @@ int main()
 		std::cout << "Error: " << e.what() << std::endl;
 	}
 
+	try {
+		Form form("Wrong_form", 20, 0);
+	} catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
+	try {
+		Form form("Wrong_form", 20, 200);
+	} catch (const std::exception& e) {
+		std::cout << "Error: " << e.what() << std::endl;
+	}
+
 	return 0;
 }

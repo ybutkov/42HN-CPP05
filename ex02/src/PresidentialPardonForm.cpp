@@ -16,6 +16,6 @@ void PresidentialPardonForm::executeForm() const
 {
 	std::cout << "--PresidentialPardonForm execution started:\n";
 	std::cout << "----We inform you that " << this->getTarget() 
-		<< "  has been pardoned by Zaphod Beeblebrox\n";
+		<< " has been pardoned by Zaphod Beeblebrox\n";
 	std::cout << "--PresidentialPardonForm execution stopped" << std::endl;
 }

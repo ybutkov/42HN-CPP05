@@ -13,7 +13,7 @@ public:
     ShrubberyCreationForm(const ShrubberyCreationForm& other);
     ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
     ~ShrubberyCreationForm() {}
-
+protected:
     void executeForm(void) const override;
 };
 
